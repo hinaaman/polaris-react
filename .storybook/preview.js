@@ -32,6 +32,7 @@ const COMPONENTS_TO_OMIT_APP_PROVIDER = [
   'App provider',
   'Contextual save bar',
   'Frame',
+  'Theme provider',
 ];
 
 function AppProviderWithKnobs({newDesignLanguage, colorScheme, children}) {
@@ -43,7 +44,10 @@ function AppProviderWithKnobs({newDesignLanguage, colorScheme, children}) {
     }
   })();
 
-  if (COMPONENTS_TO_OMIT_APP_PROVIDER.includes(componentName)) return children;
+  if (COMPONENTS_TO_OMIT_APP_PROVIDER.includes(componentName)) {
+    console.log({componentName});
+    return children;
+  }
 
   const colors = Object.entries(DefaultThemeColors).reduce(
     (accumulator, [key, value]) => ({
