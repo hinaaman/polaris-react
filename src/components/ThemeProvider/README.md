@@ -42,7 +42,7 @@ The app provider component renders a theme provider component and a theme. By de
 
 ### Theme provider with theme colors rendered by the app provider
 
-A custom theme can be passed to the theme prop on the app provider to override one or more of the default theme colors at a global level. 
+A custom theme can be passed to the theme prop on the app provider to override one or more of the default theme colors at a global level.
 
 ```jsx
 <AppProvider
@@ -197,7 +197,7 @@ Using the `linear-gradient()` function as a fallback to the `var()` function cau
 
 ```scss
 .Button {
-  background-color: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     color('indigo'),
     color('indigo', 'dark')
@@ -205,6 +205,7 @@ Using the `linear-gradient()` function as a fallback to the `var()` function cau
 }
 
 .Button.newDesignLanguage {
+  background-image: var(--p-override-none);
   background-color: var(--p-action-primary);
 }
 ```
