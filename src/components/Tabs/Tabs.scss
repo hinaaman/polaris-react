@@ -90,11 +90,14 @@ $focus-state-box-shadow-color: rgba(92, 106, 196, 0.8);
     }
   }
 
+  &:active {
+    background: var(--p-surface-pressed);
+  }
+
   &:focus {
     &:not(:active) {
       @include focus-ring($style: 'focused');
     }
-    background: var(--p-surface-pressed);
     box-shadow: var(
       --p-override-none,
       inset 0 0 2px 0 $focus-state-box-shadow-color,
